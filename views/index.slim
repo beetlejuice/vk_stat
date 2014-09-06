@@ -1,0 +1,11 @@
+h2 People List
+i == flash[:result]
+ol
+  - @people.each do |person|
+    li
+      | #{person[:vk_id]}, #{person[:name]}&nbsp;
+      a href = "/person/#{person.id}" View stats
+      form.delete action="/person/#{person.id}" method="POST"
+        input type="hidden" name="_method" value="DELETE"
+        input type="submit" value="Delete"
+a href="/person/add" Add new

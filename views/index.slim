@@ -8,4 +8,8 @@ ol
       form.delete action="/person/#{person.id}" method="POST"
         input type="hidden" name="_method" value="DELETE"
         input type="submit" value="Delete"
-a href="/person/add" Add new
+form action="/" method="POST"
+  input#id name="vk_id" type="text" placeholder="VK id"
+    input type="submit" value="Add Person"
+br
+a href="/run" Run

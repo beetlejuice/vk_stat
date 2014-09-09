@@ -13,7 +13,7 @@ class Parser
     end
 
     @app = VK::Application.new
-    @app.client_auth(login: 'koomstrda@mail.ru', password: 'Ufybvtl2001')
+    @app.client_auth(login: '****', password: '****')
   end
 
   def get_friends(id)

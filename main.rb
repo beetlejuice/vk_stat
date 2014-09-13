@@ -31,5 +31,6 @@ end
 require './models/init'
 require './routes/init'
 require './classes/init'
+require './helpers/init'
 
 DataMapper.finalize.auto_upgrade!

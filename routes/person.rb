@@ -1,7 +1,7 @@
 get '/person/:id' do
   @person = Person.get(params[:id])
   @logs = @person.logs
-  @title = @person.vk_name
+  @title = @person.full_name
   slim :'person'
 end
 

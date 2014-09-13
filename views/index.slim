@@ -11,7 +11,7 @@ div style="display:inline;"
 ol
   - @people.each do |person|
     li
-      | #{person[:vk_id]}, #{person[:vk_name]}&nbsp;
+      | #{person.vk_id}, #{person.full_name}&nbsp;
       a href = "/person/#{person.id}" View stats
       form.delete action="/person/#{person.id}" method="POST"
         input type="hidden" name="_method" value="DELETE"

@@ -27,7 +27,7 @@ class Parser
 
   # Helper methods
   def get_user_name(user_id)
-    unformatted_name = self.get_users([user_id])
-    unformatted_name.first.tap {|e| return e['first_name'] << ' ' << e['last_name'] }
+    user = self.get_users([user_id]).first
+    {:first_name => user['first_name'], :last_name => user['last_name']}
   end
 end

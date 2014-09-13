@@ -8,4 +8,16 @@ class Settings
   def self.vk_password
     @@settings['vk_password']
   end
+
+  def self.chart_start_hour
+    @@settings['start_hour']
+  end
+
+  def self.chart_end_hour
+    @@settings['end_hour']
+  end
+
+  def self.chart_interval
+    @@settings['interval']
+  end
 end

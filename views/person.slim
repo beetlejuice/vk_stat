@@ -1,5 +1,5 @@
 h2 =@person.full_name
-== slim :chart
+== slim :chart, :disable_escape => true
 ul
   - @logs.each do |log|
-    li =log.online_at
+    li = log.online_at

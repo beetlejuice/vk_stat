@@ -8,7 +8,6 @@ class Collector
     time_now = DateTime.now
     users.each do |user|
       if user['online'] == 1
-        p "User #{user['id']} is online!"
         person = people.find { |person| person.vk_id == user['id'].to_s }
         person.logs.create :online_at => time_now
       end

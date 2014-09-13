@@ -1,8 +1,8 @@
-canvas#myChart height="400" width="400"
+canvas#activityChart height="300" width="1250"
   javascript:
-    var ctx = document.getElementById("myChart").getContext("2d");
+    var ctx = document.getElementById("activityChart").getContext("2d");
     var data = {
-      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      labels: #{@labels},
       datasets: [
         {
           label: "My First dataset",
@@ -12,11 +12,14 @@ canvas#myChart height="400" width="400"
           pointStrokeColor: "#fff",
           pointHighlightFill: "#fff",
           pointHighlightStroke: "rgba(151,187,205,1)",
-          data: [28, 48, 40, 19, 86, 27, 90]
+          data: #{@data}
         }
       ]
     };
-    var myLineChart = new Chart(ctx).Line(data, {
+    var myLineChart = new Chart(ctx).Bar(data, {
       animation: false,
+      scaleOverride: true,
+      scaleSteps: 10,
+      scaleStepWidth: 1,
       bezierCurve: false
     });

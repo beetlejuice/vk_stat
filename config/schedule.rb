@@ -21,5 +21,5 @@ set :output, { :standard => "~/Documents/Development/logs/vk_stat.log",
                :error => "~/Documents/Development/logs/vk_stat.errors.log" }
 
 every 1.minute do
-  rake "vk_collect"
+  rake "collect"
 end

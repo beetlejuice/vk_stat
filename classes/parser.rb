@@ -30,6 +30,4 @@ class Parser
     unformatted_name = self.get_users([user_id])
     unformatted_name.first.tap {|e| return e['first_name'] << ' ' << e['last_name'] }
   end
-
-  # private :get_friends, :get_users
 end

@@ -1,18 +1,21 @@
 h2 People List
 i == flash[:result]
+
 div style="display:inline;"
-  form action="/add_user" method="POST"
+  form method="POST"
     input#id name="vk_id" type="text" placeholder="VK id"
-      input type="submit" value="Add Person"
-        form action="/add_friends" method="POST"
-          input type="submit" value="Add Friends"
+      input onclick=("javascript: form.action='/add_user';") type="submit" value="Add Person"
+      input onclick=("javascript: form.action='/add_friends';") type="submit" value="Add Friends"
   br
   a href="/run" Run
 ol
   - @people.each do |person|
     li
-      | #{person[:vk_id]}, #{person[:name]}&nbsp;
+      | #{person[:vk_id]}, #{person[:vk_name]}&nbsp;
       a href = "/person/#{person.id}" View stats
       form.delete action="/person/#{person.id}" method="POST"
         input type="hidden" name="_method" value="DELETE"
         input type="submit" value="Delete"
+form.delete action="/person/all" method="POST"
+  input type="hidden" name="_method" value="DELETE"
+  input type="submit" value="DELETE ALL"
